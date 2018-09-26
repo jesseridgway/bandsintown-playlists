@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/5.5.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/5.5.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.5.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/5.5.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/5.5.1/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+
+
+    <meta name="apple-music-developer-token" content="eyJraWQiOiJDU0VBN0UySlBKIiwiYWxnIjoiRVMyNTYifQ.eyJleHAiOjE1NTE5NjU3NTAsImlzcyI6IlBBS0xWMlJXOUwiLCJpYXQiOjE1MzYxODg3NTB9.fFE2tucFNgjlrr4pgEXUrQd33S_J_HCRuJQlCAeKCawez-F4_56rYZ2fNnhaT6PPV4oGdtaK93Q6SGKD4Cwntw">
+    <meta name="apple-music-app-name" content="Playlists App">
+    <meta name="apple-music-app-build" content="1">
+    <meta name="apple-music-app-version" content="1.0">
+
+    
+    
+
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message">
+      <!-- <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a> -->
+   
+    <!-- <p id="load">Firebase SDK Loading&hellip;</p> -->
+
+      <button id="apple-music-authorize"></button>
+      <button id="apple-music-unauthorize"></button> <br>
+
+      <a
+      target="_blank" href="https://us-central1-bandsintown-playlists.cloudfunctions.net/generatePlaylist?city_name=los-angeles&lat=34.0522222&long=-118.2427778">Los Angeles</a>   
+
+      <a
+      target="_blank" href="https://us-central1-bandsintown-playlists.cloudfunctions.net/generatePlaylist?city_name=new-york&lat=40.7141667&long=-74.0063889">New York</a>
+  
+      <a 
+      target="_blank" 
+      href="https://us-central1-bandsintown-playlists.cloudfunctions.net/generatePlaylist?city_name=nashville&lat=36.1658333&long=-86.7844444">Nashville</a>
+
+      <a
+      target="_blank" 
+      href="https://us-central1-bandsintown-playlists.cloudfunctions.net/generatePlaylist?city_name=atlanta&lat=33.7488889&long=-84.3880556">Atlanta</a>
+
+      <a
+      target="_blank" 
+      href="https://us-central1-bandsintown-playlists.cloudfunctions.net/generatePlaylist?city_name=tokyo&lat=35.7039300&long=139.7786870">Tokyo</a>   
+
+      <a
+      target="_blank" 
+      href="https://us-central1-bandsintown-playlists.cloudfunctions.net/generatePlaylist?city_name=hong-kong&lat=22.283333300&long=114.1500000">Hong Kong</a>
+      
+      <a
+      target="_blank" 
+      href="https://us-central1-bandsintown-playlists.cloudfunctions.net/generatePlaylist?city_name=sydney&lat=-33.8833333&long=151.2166667">Sydney</a>
+
+      <a 
+      target="_blank" 
+      href="https://us-central1-bandsintown-playlists.cloudfunctions.net/generatePlaylist?city_name=berlin&lat=52.5166667&long=13.4000000">Berlin</a>
+
+      <a
+      target="_blank" href="https://us-central1-bandsintown-playlists.cloudfunctions.net/generatePlaylist?city_name=paris&lat=52.5166667&long=13.4000000">Paris</a>
+      
+      <a 
+      target="_blank" 
+      href="https://us-central1-bandsintown-playlists.cloudfunctions.net/generatePlaylist?city_name=london&lat=51.5000000&long=-0.1166667">London</a>
+
+      <a
+      target="_blank" 
+      href="https://us-central1-bandsintown-playlists.cloudfunctions.net/generatePlaylist?city_name=dublin&lat=53.3330556&long=-6.2488889">Dublin</a>
+
+      <a 
+      target="_blank" 
+      href="https://us-central1-bandsintown-playlists.cloudfunctions.net/generatePlaylist?city_name=rome&lat=41.9000000&long=12.4833333">Rome</a>
+      
+      <a 
+      target="_blank" 
+      href="https://us-central1-bandsintown-playlists.cloudfunctions.net/generatePlaylist?city_name=rio-de-janeiro&lat=-22.9000000&long=-43.2333333">Rio De Janeiro</a>
+
+      <a 
+      target="_blank" 
+      href="https://us-central1-bandsintown-playlists.cloudfunctions.net/generatePlaylist?city_name=mexico-city&lat=19.4319000&long=-99.1328510">Mexico City</a>
+
+      <a 
+      target="_blank" 
+      href="https://us-central1-bandsintown-playlists.cloudfunctions.net/generatePlaylist?city_name=buenos-aires&lat=34.5875000&long=-58.6725000">Buenos Aires</a>
+
+    </div>
+    
+    <script src="https://js-cdn.music.apple.com/musickit/v1/musickit.js"></script>
+    <script src="./test.js"></script>
+    <script src="./playlist.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        try {
+          let app = firebase.app();
+          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+
+
+      document.addEventListener('musickitloaded', function() {
+        // MusicKit global is now defined
+        MusicKit.configure({
+          developerToken: 'eyJraWQiOiJDU0VBN0UySlBKIiwiYWxnIjoiRVMyNTYifQ.eyJleHAiOjE1NTE5NjU3NTAsImlzcyI6IlBBS0xWMlJXOUwiLCJpYXQiOjE1MzYxODg3NTB9.fFE2tucFNgjlrr4pgEXUrQd33S_J_HCRuJQlCAeKCawez-F4_56rYZ2fNnhaT6PPV4oGdtaK93Q6SGKD4Cwntw',
+          app: {
+            name: 'Playlists',
+            build: '1',
+            version: '1.0'
+          }
+        });
+
+        let music = MusicKit.getInstance();
+
+        music.authorize().then(function(userToken) {
+          console.log(userToken);
+          music.api.library.songs().then(function(cloudSongs) {
+          // user's cloudAlbums
+          console.log(cloudSongs);
+        });
+      });
+     
+     
+ });
+
+ 
+
+
+
+
+    </script>
+
+    
+  </body>
+</html>

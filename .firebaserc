@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "playlists": "bandsintown-playlists",
+    "prod": "bandsintown-playlist-generator"
+  }
+}
